@@ -29,7 +29,7 @@ body {
 }
 
 .wrapper {
-  width: min(120rem, 100%);
+  width: min(140rem, 100%);
   display: grid;
   grid-template-rows: 1fr 5fr 0.5fr;
 }
@@ -67,10 +67,14 @@ div[class$="__logo"] img {
 main {
   padding: 2em 4em;
   background-color: var(--main-background-color);
+}
+
+.main-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10em;
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -79,10 +83,49 @@ main {
   border-radius: var(--border-radius);
 }
 
+.btn-primary {
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+
+.btn-delete {
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+
 .btn:hover,
 .btn:focus {
   background: var(--primary-color);
   color: var(--white-color);
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background: red;
+  color: var(--white-color);
+}
+
+.main-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  justify-items: center;
+}
+
+.card {
+  min-height: max(15rem, 100%);
+  background-color: var(--white-color);
+  padding: 2rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.card__status {
+  font-weight: 700;
 }
 
 .main-content {
