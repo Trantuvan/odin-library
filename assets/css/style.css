@@ -1,12 +1,10 @@
 :root {
-  --white-color: #f8fafc;
+  --white-color: #fff;
   --black-color: #000;
   --text-color: #333;
-  --primary-color: #60a5fa;
-  --primary-darker-color: #3b82f6;
   --main-background-color: #e2e8f0;
-  --side-card-color: #facc15;
   --border-radius: 8px;
+  --logo-width: min(6rem, 100%);
 }
 
 html {
@@ -20,4 +18,46 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: min(120rem, 100%);
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+header {
+  background-color: var(--white-color);
+  padding: 2em 2em;
+}
+
+.hero-container {
+  height: max(5rem, 100%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero__logo {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  flex-basis: var(--logo-width);
+  flex-shrink: 0;
+}
+
+div[class$="__logo"] img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: min(var(--logo-width), 100%);
+}
+
+.hero__text {
+  font-size: clamp(1vw, 4.2rem, 2vw);
+  text-transform: uppercase;
 }
