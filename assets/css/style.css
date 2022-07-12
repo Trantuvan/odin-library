@@ -206,7 +206,7 @@ footer > .footer-content {
   animation: modalFadeIn ease 0.5s;
 }
 
-@keyframes modal {
+@keyframes modalFadeIn {
   from {
     opacity: 0;
     transform: translateY(-140px);
