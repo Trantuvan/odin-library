@@ -141,3 +141,8 @@ footer > .footer-content {
 #footer-logo img {
   width: min(3rem, 100%);
 }
+
+/* utils class */
+.deactivated {
+  display: none;
+}
