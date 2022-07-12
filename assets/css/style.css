@@ -47,8 +47,6 @@ header {
 }
 
 .hero__logo {
-  aspect-ratio: 1/1;
-  object-fit: cover;
   flex-basis: var(--logo-width);
   flex-shrink: 0;
 }
@@ -183,6 +181,126 @@ footer > .footer-content {
 
 #footer-logo img {
   width: min(3rem, 100%);
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  background-color: var(--white-color);
+  width: min(40rem, 100%);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  animation: modalFadeIn ease 0.5s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translateY(-140px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em;
+  position: relative;
+}
+
+.modal-header > .header__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.header__title > .title__logo {
+  flex-basis: min(4rem, 100%);
+  flex-shrink: 0;
+}
+
+#modal__logo > img {
+  width: min(4rem, 100%);
+}
+
+.close__logo {
+  width: min(2rem, 100%);
+  position: absolute;
+  right: 1.4rem;
+  top: 1rem;
+}
+
+#modal__close > img {
+  width: min(2rem, 100%);
+  cursor: pointer;
+}
+
+.header__title > .title__text {
+  font-size: 2.4rem;
+}
+
+.modal-body {
+  padding: 2em 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-body > .add-book-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(30rem, 100%);
+  gap: 1.6rem;
+}
+
+.form-action {
+  font-size: 1.6rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.form-action.row {
+  flex-direction: row;
+}
+
+.form-action > input[type="text"],
+.form-action > input[type="number"] {
+  padding: 0.5rem;
+}
+
+.form-action > button {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.form-action > button:hover,
+.form-action > button:focus {
+  background: var(--white-color);
+  color: var(--black-color);
 }
 
 /* utils class */
