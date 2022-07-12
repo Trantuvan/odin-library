@@ -1,3 +1,6 @@
+import Book from "./models/book.js";
+import Library from "./models/library.js";
+
 // Modal
 const addBookbtn = document.querySelector("#add-book-btn");
 const modal = document.querySelector(".modal");
