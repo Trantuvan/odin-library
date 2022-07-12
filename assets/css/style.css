@@ -1,0 +1,23 @@
+:root {
+  --white-color: #f8fafc;
+  --black-color: #000;
+  --text-color: #333;
+  --primary-color: #60a5fa;
+  --primary-darker-color: #3b82f6;
+  --main-background-color: #e2e8f0;
+  --side-card-color: #facc15;
+  --border-radius: 8px;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
