@@ -2,8 +2,22 @@ import Book from "./models/book.js";
 import Library from "./models/library.js";
 
 const library = new Library();
+const mainGrid = document.querySelector(".main-grid");
 
 // features per card
+function readBook(cardIndex) {
+  if (cardIndex < 0) {
+    return;
+  }
+  library.readBook(cardIndex);
+}
+
+function removeBook(cardIndex) {
+  if (cardIndex < 0) {
+    return;
+  }
+  library.removeBook(cardIndex);
+}
 
 // render one card per submit
 function renderWhenAddBook(library) {
@@ -11,9 +25,6 @@ function renderWhenAddBook(library) {
   const lastBookInLibrary = userLibrary[userLibrary.length - 1];
   const lastBookIndex = userLibrary.indexOf(lastBookInLibrary);
   const mainContent = document.querySelector(".main-content");
-  const mainGrid = document.querySelector(".main-grid");
-
-  console.log(lastBookIndex);
 
   mainContent.classList.add("deactivated");
   mainGrid.classList.remove("deactivated");
@@ -43,6 +54,34 @@ addBookFormSubmit.addEventListener("click", (evt) => {
   createBookInstance(library);
   renderWhenAddBook(library);
   closeModal();
+
+  if (mainGrid.hasChildNodes()) {
+    const cardButtons = document.querySelectorAll(".card button");
+    const cardButtonArray = Array.from(cardButtons);
+
+    cardButtonArray.forEach((button) => {
+      button.addEventListener("click", (evt) => {
+        const card = evt.target.parentNode.parentNode;
+        const cardIndex = card.getAttribute("data-index");
+
+        if (evt.target.classList.contains("btn-primary")) {
+          readBook(cardIndex);
+          const cardStatus = card.querySelector(".card__status");
+          cardStatus.innerHTML = `<p class="card__status">${library.userLibrary[cardIndex].isRead}</p>`;
+
+          evt.target.textContent =
+            library.userLibrary[cardIndex].isRead === "Read"
+              ? "Not Read"
+              : "Read";
+        }
+
+        if (evt.target.classList.contains("btn-delete")) {
+          removeBook(cardIndex);
+          mainGrid.removeChild(card);
+        }
+      });
+    });
+  }
 });
 
 function createBookInstance(library) {

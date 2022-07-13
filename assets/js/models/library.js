@@ -11,7 +11,7 @@ class Library {
     this.userLibrary.splice(this.userLibrary.indexOf(cardIndex), 1);
   }
 
-  toggleIsReadBook(cardIndex) {
+  readBook(cardIndex) {
     this.userLibrary[cardIndex].isRead =
       this.userLibrary[cardIndex].isRead === "Read" ? "Not Read" : "Read";
   }
