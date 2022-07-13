@@ -6,6 +6,15 @@ class Library {
   addBook(book) {
     this.userLibrary.push(book);
   }
+
+  removeBook(cardIndex) {
+    this.userLibrary.splice(this.userLibrary.indexOf(cardIndex), 1);
+  }
+
+  toggleIsReadBook(cardIndex) {
+    this.userLibrary[cardIndex].isRead =
+      this.userLibrary[cardIndex].isRead === "Read" ? "Not Read" : "Read";
+  }
 }
 
 export default Library;

@@ -1,9 +1,11 @@
 import Book from "./models/book.js";
 import Library from "./models/library.js";
 
-// render library page
 const library = new Library();
 
+// features per card
+
+// render one card per submit
 function renderWhenAddBook(library) {
   const userLibrary = library.userLibrary;
   const lastBookInLibrary = userLibrary[userLibrary.length - 1];
