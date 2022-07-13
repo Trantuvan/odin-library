@@ -3,7 +3,7 @@ class Book {
     this.name = name;
     this.author = author;
     this.pages = pages;
-    this.isRead = isRead;
+    this.isRead = isRead === false ? "not read" : "read";
   }
 }
 

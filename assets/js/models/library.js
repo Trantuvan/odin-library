@@ -1,6 +1,10 @@
 class Library {
   constructor(library = []) {
-    this.library = library;
+    this.userLibrary = library;
+  }
+
+  addBook(book) {
+    this.userLibrary.push(book);
   }
 }
 
