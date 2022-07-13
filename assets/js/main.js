@@ -22,7 +22,9 @@ function renderWhenAddBook(library) {
             <p class="card__author">${lastBookInLibrary.author}</p>
             <p class="card__pages">${lastBookInLibrary.pages} pages</p>
             <div class="card__actions">
-              <button class="btn btn-primary">Read</button>
+              <button class="btn btn-primary">${
+                lastBookInLibrary.isRead === "Read" ? "Not Read" : "Read"
+              }</button>
               <button class="btn btn-delete">Delete</button>
             </div>
             <p class="card__status">${lastBookInLibrary.isRead}</p>
