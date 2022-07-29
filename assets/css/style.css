@@ -29,7 +29,7 @@ body {
 }
 
 .wrapper {
-  width: min(140rem, 100%);
+  width: min(150rem, 100%);
   display: grid;
   grid-template-rows: 1fr 5fr 0.5fr;
 }
