@@ -106,14 +106,13 @@ main {
 .main-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 
 .card {
   min-height: max(15rem, 100%);
   background-color: var(--white-color);
-  padding: 2rem 3rem;
+  padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.3);
   display: flex;
